@@ -1,0 +1,63 @@
+---
+import "/src/styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import Footer from "../../components/footer.astro";
+import Header from "../../components/Header.astro";
+import Banner from "../../components/Banner.astro";
+const text = `En la <b>Clínica Hermosilla 57</b> contamos con un excelente equipo de <b>odontólogos especializados</b> en diferentes áreas, que tratarán sus problemas bucodentales desde un <b>enfoque multidisciplinar</b>. Un conjunto de expertos que darán solución a todas sus necesidades.
+
+El trabajo en equipo es uno de los pilares fundamentales de nuestra <b>clínica dental especializada</b> en problemas de salud bucodental. En la <b>Clínica Hermosilla 57</b> sabemos que la suma de conocimientos, buen hacer y trabajo en equipo es la clave del éxito. Aunando esfuerzos logramos soluciones más eficientes y adecuadas tanto en odontología estética especializada como en tratamientos de salud bucodental para cada uno de nuestros pacientes.
+
+Para nosotros es fundamental proporcionar la mejor atención médica, así como hacer que nuestros pacientes se sientan <b>cómodos y seguros</b> con los tratamientos. Nos esforzamos cada día para que los pacientes tengan plena confianza en todo el personal de la clínica. <b>Odontólogos especialistas</b>, auxiliares, higienistas y demás componentes del equipo están a su disposición para dar respuesta a todas sus dudas.
+
+En la <b>Clínica Hermosilla 57</b> trabajamos para que reciba una <b>atención personalizada y adaptada</b> a sus necesidades. Cada visita a nuestro <b>centro de odontología especializado</b> es única, para nosotros es muy importante que usted salga del mismo con la certeza de que está siendo tratado por <b>los mejores profesionales</b>, los mejores <b>dentistas especializados</b> en las diferentes áreas que abordamos.
+
+<i>Nuestra prioridad es Usted. Entre a conocer nuestros <a>tratamientos dentales.</a></i>`;
+const dentists = [
+    {
+name:'DRA.&nbsp;BERTA CARLEVARIS',
+src:'/src/assets/specialties-images/BertaCarlevaris.jpg',
+link:'dra-berta-carlevaris/'
+},
+    {
+name:'DR.&nbsp;ENRIQUE LÓPEZ',
+src:'/src/assets/specialties-images/EnriqueLopez.jpg',
+link:'dr-enrique-lopez/'
+},
+    {
+name:'DR.&nbsp;PABLO FRAILE',
+src:'/src/assets/specialties-images/PabloFrailes.jpg',
+link:'dr-pablo-fraile/'
+},
+    {
+name:'DR.&nbsp;JAVIER MARTÍNEZ-SALMEÁN',
+src:'/src/assets/specialties-images/JavierMartinezSalmean.jpg',
+link:'dr-javier-martinez-salmean/'
+},
+]
+---
+<Layout>
+    <Banner/>
+    <Header/>
+<main>
+  <div class="px-[10%] py-10 overflow-hidden">
+<img src="/src/assets/specialties-images/team.jpg" class="float-right w-[570px] h-[300px] object-cover ml-8 mb-4 rounded max-[600px]:w-[350px] max-[600px]:h-[200px]">
+    <span set:html={text} class="whitespace-pre-line font-light text-xl max-[600px]:text-sm"></span>
+  </div>
+
+  <div class="bg-pink-50 w-full h-auto mb-20 pb-8">
+<h2 class="text-3xl font-bold text-gray-600 text-center pt-[2%] max-[600px]:text-xl max-[600px]:pt-[5%]">EL EQUIPO</h2>
+<div class="flex flex-row pt-15 gap-8 px-[10%] max-[600px]:flex max-[600px]:flex-wrap">
+  {dentists.map(dentist => (
+    <div class="relative w-full hover:scale-105 transition group">
+      <img src={dentist.src} class="w-full aspect-[4/4] object-cover"/>
+      <div class="absolute bottom-0 left-0 right-0 bg-black/50 group-hover:bg-pink-300 transition duration-200 text-white p-6">
+        <p class="font-bold text-lg text-center" set:html={dentist.name}/>
+      </div>
+    </div>
+  ))}
+</div>
+</div>
+</main>
+<Footer />
+</Layout>
