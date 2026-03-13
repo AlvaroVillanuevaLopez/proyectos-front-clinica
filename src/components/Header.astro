@@ -1,33 +1,12 @@
----
-const correo = "recepcion@clinicahermosilla57.com";
-const telefono = "+34 91 310 51 52";
----
-
-<div id="banner" class="bg-gray-100 p-3">
-    <div
-        id="banner-container"
-        class="max-w-6xl mx-auto md:grid md:grid-cols-2"
-    >
-        <div class="font-semibold text-gray-500 md:flex">
-            <div>
-                <a href={`mailto:${correo}`} class="text-sm" target="_blank">
-                    {correo}
-                </a>
-            </div>
-            <div>
-                <a href={`tel:${telefono}`} class="md:ml-4 text-xs">
-                    {telefono}
-                </a>
-            </div>
-        </div>
-
-        <div class="justify-self-end">
-            <a class="bg-pink-600 text-white font-semibold px-5 py-2 text-xs">
-                PEDIR CITA
-            </a>
-        </div>
+<div id="header" class="bg-white max-w-6xl mx-auto xl:grid xl:grid-cols-12">
+    <div id="logo" class="text-left xl:col-span-4 mt-5 mb-7">
+        <img src="/logo/logo.png" alt="logo"/>
     </div>
-</div>
-<div id="header" class="bg-white">
-    <div id="header-contenedor" class=""></div>
+    <div id="pestañas" class="md:flex items-center xl:col-span-8 xl:ml-19">
+        <div class="pestana-inicio">INICIO</div>
+        <div class="pestana-inicio">¿QUIENES SOMOS?</div>
+        <div class="pestana-inicio w-1/4">ESPECIALIDADES Y TRATAMIENTOS</div>
+        <div class="pestana-inicio">LA CLINICA</div>
+        <div class="pestana-inicio">CONTACTO</div>
+    </div>
 </div>
