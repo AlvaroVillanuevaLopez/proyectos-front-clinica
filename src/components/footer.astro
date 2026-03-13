@@ -1,0 +1,60 @@
+---
+const leftlinks =[
+    {
+        name:"Aviso Legal",
+        link:"https://www.clinicahermosilla57.com/aviso-legal/"
+    },
+    {
+        name:"Politica de cookies",
+        link:"https://www.clinicahermosilla57.com/politica-cookies/"
+    },
+        {
+        name:"Mas Informacion sobre las Cookies",
+        link:"https://www.clinicahermosilla57.com/mas-informacion-sobre-las-cookies/"
+    },
+        {
+        name:"Mapa web",
+        link:"https://www.clinicahermosilla57.com/mapa-web/"
+    },
+    ]
+const rightlinks =[
+    {
+        name:"Inicio",
+        link:"https://www.clinicahermosilla57.com/"
+    },
+    {
+        name:"¿Quienes Somos?",
+        link:"https://www.clinicahermosilla57.com/aviso-legal/"
+    },
+        {
+        name:"Especialidades y Tratamientos",
+        link:"https://www.clinicahermosilla57.com/tratamientos-dentales/"
+    },
+        {
+        name:"La Clínica",
+        link:"https://www.clinicahermosilla57.com/la-clinica/"
+    },
+        {
+        name:"Blog",
+        link:"https://www.clinicahermosilla57.com/blog/"
+    },
+        {
+        name:"Contacto",
+        link:"https://www.clinicahermosilla57.com/contacto/"
+    },
+    ]
+---
+
+<footer class="bg-gray-100 text-pink-500 font-semibold flex justify-center items-center flex-row w-full min-h-[10vh] py-[5%] ">
+<ul class="flex flex-row pr-10 max-[600px]:flex-wrap max-[600px]:flex-col text-sm max-[600px]:pl-3">
+{leftlinks.map(link=>(
+    <li class="max-[600px]:py-2"><a href={link.link} target="_blank">{link.name}</a><span class="px-4 max-[600px]:px-1 font-black">·</span></li>
+))}
+</ul>
+<ul class="flex flex-row pl-10 max-[600px]:flex-wrap max-[600px]:flex-col text-sm">
+{rightlinks.map(link=>(
+    <li class="max-[600px]:py-2"><a href={link.link} target="_blank">{link.name}</a><span class="px-4 max-[600px]:px-1 font-black">·</span></li>
+))}
+</ul>
+
+</footer>
