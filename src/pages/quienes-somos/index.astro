@@ -53,7 +53,7 @@ const dentists = [
             <div class="relative w-full hover:scale-105 transition group">
               <img src={dentist.src} class="w-full aspect-[4/4] object-cover"/>
               <div class="absolute bottom-0 left-0 right-0 bg-black/50 group-hover:bg-pink-800/90 transition duration-200 text-white p-6">
-                <p class="font-bold text-lg text-center" set:html={dentist.name}/>
+                <p class="text-lg text-center" set:html={dentist.name}/>
               </div>
             </div>
           ))}
