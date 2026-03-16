@@ -5,18 +5,18 @@ const currentPath = Astro.url.pathname;
 const active = "bg-pink-600 text-white";
 const inactive = "hover:text-gray-500";
 ---
-<div id="header" class="bg-white max-w-6xl mx-auto xl:grid xl:grid-cols-12 py-4">
+<div id="header" class="bg-white max-w-6xl mx-auto md:grid md:grid-cols-12 py-4 mt-10">
 
   <!-- Logo -->
-  <div id="logo" class="xl:col-span-4 mt-5 mb-7">
+  <div id="logo" class="md:col-span-4 mt-5 mb-7">
     <a href="/"><img src="/logo/logo.png" alt="logo" /></a>
   </div>
 
   <!-- Menú con Alpine.js -->
-  <div class="xl:col-span-8 xl:flex xl:items-center xl:justify-end" x-data="{ open: false }">
+  <div class="md:col-span-8 md:flex" x-data="{ open: false }">
 
-    <!-- Botón hamburguesa para pantallas pequeñas -->
-    <div class="flex items-center xl:hidden">
+    <!-- Botón hamburguesa solo en móviles -->
+    <div class="flex items-center md:hidden">
       <button 
         type="button" 
         @click="open = !open" 
@@ -33,20 +33,24 @@ const inactive = "hover:text-gray-500";
     <!-- Menú de pestañas -->
     <div 
       :class="{'block': open, 'hidden': !open}" 
-      class="hidden flex-col xl:flex xl:flex-row xl:justify-end xl:items-center mt-2 xl:mt-0"
+      class="hidden flex-col md:flex md:flex-row md:justify-end md:items-center mt-2 md:mt-0"
     >
       <div class={`pestana ${Astro.url.pathname === '/' ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
         <a href="/">INICIO</a>
       </div>
+
       <div class={`pestana ${Astro.url.pathname.startsWith('/quienes-somos/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
         <a href="/quienes-somos/">¿QUIENES SOMOS?</a>
       </div>
+
       <div class={`pestana w-10/45 ${Astro.url.pathname.startsWith('/especialidades-y-tratamientos/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
         <a href="/especialidades-y-tratamientos/">ESPECIALIDADES Y TRATAMIENTOS</a>
       </div>
+
       <div class={`pestana ${Astro.url.pathname.startsWith('/la-clinica/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
         <a href="/la-clinica/">LA CLINICA</a>
       </div>
+
       <div class={`pestana ${Astro.url.pathname.startsWith('/contacto/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
         <a href="/contacto/">CONTACTO</a>
       </div>
