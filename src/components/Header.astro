@@ -27,7 +27,7 @@ const inactive = "hover:text-gray-500";
         >
             ESPECIALIDADES Y TRATAMIENTOS
         </div>
-        <div class="pestana">LA CLINICA</div>
+        <div class={`pestana ${currentPath.startsWith("/la-clinica/") ? active : inactive}`}><a href="/la-clinica/">LA CLINICA</a></div>
         <div class="pestana">CONTACTO</div>
     </div>
 </div>
