@@ -1,11 +1,8 @@
 ---
-import fotoGaleria from "../assets/fotoGaleria.jpg";
+import fotoGaleria from "../assets/fotos-laclinica/fotoGaleria.jpg";
+import logoX from "../assets/logos-rrss/logo-x.png";
+import logoGmail from "../assets/logos-rrss/logo-gmail.webp";
 const clinicData = {
-  DatosInicio: 
-    { 
-        Inicio: "Inicio", 
-        href: "https://www.clinicahermosilla57.com/la-clinica/",
-        titulo: "Conozca nuestra clínica"},
   paragraphs: [
     {
       text: "En la <strong class='font-bold text-[#444]'>Clínica 57</strong> sabemos la importancia que tiene la salud bucodental. Para ello, ponemos a disposición de nuestros pacientes las últimas <strong class='font-bold text-[#444]'>innovaciones odontológicas</strong> con el objetivo de devolver y mantener la salud oral y la belleza de su sonrisa. <strong class='font-bold text-[#444]'>Situados en pleno barrio de Salamanca</strong>, en la <strong class='font-bold text-[#444]'>Clínica Hermosilla 57</strong> aunamos la <strong class='font-bold text-[#444]'>atención personalizada y exclusiva</strong> al paciente con la calidad y la más avanzada y moderna tecnología odontológica."
@@ -32,12 +29,6 @@ const clinicData = {
 ---
 <div class="bg-white min-h-screen pt-10 pb-20">
   <section class="w-auto mx-50 px-6 font-light text-[#777] leading-relaxed">
-    
-    <nav class="flex items-center gap-2 text-[11px] uppercase tracking-wider mb-10 text-gray-400">
-        <a href="DatosInicio.href}" class="text-gray-400 hover:text-gray-600">{clinicData.DatosInicio.Inicio}</a>
-        <span class="mx-1 text-gray-300">&gt;</span>
-        <span class="text-gray-400">{clinicData.DatosInicio.titulo}</span>
-    </nav>
 
     <div class="text-2xl text-justify md:text-left flex flex-col gap-6">
       {clinicData.paragraphs.map((p) => (
@@ -46,26 +37,24 @@ const clinicData = {
     </div>
 
     <div class="flex items-center gap-3 mt-8">
-      <button class="text-[11px] text-[#3b5998] hover:underline">Tweet</button>
-      <button class="flex items-center gap-1 px-2 py-1 border border-gray-300 rounded bg-[#f8f8f8] text-[11px] text-gray-600 hover:bg-white transition-all">
-        <span class="text-[10px]">✉</span> Correo electrónico
-      </button>
+      <a target ="_blank" href="http://x.com/?lang=es"><img src={logoX.src} alt="Logo X" class="w-10 h-10"></a>
+      <a target ="_blank" href="https://mail.google.com/"><img src={logoGmail.src} alt="Logo Gmail" class="w-10 h-10"></a>
     </div>
 
-<div class="relative max-w-screen-2xl mx-auto mt-10 overflow-hidden group ">
-  <img 
-    src={fotoGaleria.src} 
-    alt={clinicData.image.alt} 
-    class="block w-full h-auto"
-  />
+    <div class="relative max-w-3xl mx-auto mt-10 overflow-hidden transition duration-200 ease-in-out group hover:scale-105">
+      <img 
+        src={fotoGaleria.src} 
+        alt={clinicData.image.alt} 
+        class="block w-full h-auto"
+      />
 
-  <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-8 px-6">
-    
-    <h2 class="text-white text-2xl tracking-widest uppercase text-center font-light">
-      {clinicData.image.title}
-    </h2>
-  </div>
-</div>
+      <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-8 px-6 transition-colors duration-200 group-hover:bg-pink-800/90">
+        
+        <h2 class="text-white text-2xl tracking-widest uppercase text-center font-light">
+          {clinicData.image.title}
+        </h2>
+      </div>
+    </div>
 
   </section>
 </div>

@@ -1,0 +1,33 @@
+---
+import type { startsWith } from "astro:schema";
+const currentPath = Astro.url.pathname;
+const active = "bg-pink-500 text-white";
+const inactive = "hover:text-gray-500";
+---
+
+<div id="header" class="bg-white max-w-6xl mx-auto xl:grid xl:grid-cols-12">
+    <div id="logo" class="text-left xl:col-span-4 mt-5 mb-7">
+        <a href="/">
+            <img src="/logo/logo.png" alt="logo" />
+        </a>
+    </div>
+    <div id="pestañas" class="md:flex items-center xl:col-span-8 xl:ml-19">
+        <div class=`pestana ${currentPath==="/"?active:inactive}`>
+            <a href="/">INICIO</a>
+        </div>
+
+        <div
+            class={`pestana ${currentPath.startsWith("/quienes-somos/") ? active : inactive}`}
+        >
+            <a href="/quienes-somos/"> ¿QUIENES SOMOS?</a>
+        </div>
+
+        <div
+            class={`pestana w-1/4 ${currentPath.startsWith("/especialidades-y-tratamientos/") ? active : inactive}`}
+        >
+            ESPECIALIDADES Y TRATAMIENTOS
+        </div>
+        <div class={`pestana ${currentPath.startsWith("/la-clinica/") ? active : inactive}`}><a href="/la-clinica/">LA CLINICA</a></div>
+        <div class="pestana">CONTACTO</div>
+    </div>
+</div>
