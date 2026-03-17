@@ -29,38 +29,40 @@ Si busca una <strong class='font-bold text-[#444]'>clínica dental en el barrio 
 <Layout>
     <Banner/>
     <Header/>
-    <PrincipalImagen/>
-    <div class="bg-white min-h-screen pt-6 md:pt-10 pb-20">
-    <section class="max-w-7xl mx-auto px-4 md:px-6 font-light text-[#777] leading-relaxed">
+    <PrincipalImagen/>  
+    <div class="bg-white min-h-screen pt-6 md:pt-10 pb-20 px-[10%] py-10 overflow-hidden ">
+        <section class="max-w-7xl md:px-10 font-light">
 
-        <div class="text-lg md:text-2xl text-justify md:text-left flex flex-col gap-6">
-            <p set:html={parrafos} class="whitespace-pre-line"></p>
-        </div>
-
-        <div class="flex items-center gap-4 mt-8">
-            <a target="_blank" href="http://x.com/?lang=es">
-                <img src={logoX.src} alt="Logo X" class="w-8 h-8 md:w-10 md:h-10">
-            </a>
-            <a target="_blank" href="https://mail.google.com/">
-                <img src={logoGmail.src} alt="Logo Gmail" class="w-8 h-8 md:w-10 md:h-10">
-            </a>
-        </div>
-
-        <div class="relative max-w-3xl mx-auto mt-10 overflow-hidden transition duration-200 ease-in-out group hover:scale-105 rounded-lg">
-            <img 
-                src={fotoGaleria.src} 
-                alt={clinicData.image.alt} 
-                class="block w-full h-auto object-cover"
-            />
-
-            <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-4 md:py-8 px-6 transition-colors duration-200 group-hover:bg-pink-800/90">
-                <h2 class="text-white text-lg md:text-2xl tracking-widest uppercase text-center font-light">
-                    {clinicData.image.title}
-                </h2>
+            <div class="text-lg md:text-xl text-justify md:text-left flex flex-col gap-6">
+                <p set:html={parrafos} class="whitespace-pre-line"></p>
             </div>
-        </div>
 
-    </section>
-</div>
+            <div class="flex items-center gap-4 mt-8">
+                <a target="_blank" href="http://x.com/?lang=es">
+                    <img src={logoX.src} alt="Logo X" class="w-8 h-8 md:w-10 md:h-10">
+                </a>
+                <a target="_blank" href="https://mail.google.com/">
+                    <img src={logoGmail.src} alt="Logo Gmail" class="w-8 h-8 md:w-10 md:h-10">
+                </a>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto mt-10 overflow-hidden transition duration-200 ease-in-out group hover:scale-105">
+                <a href="/la-clinica/galeria-imagenes/">
+                    <img 
+                        src={fotoGaleria.src} 
+                        alt={clinicData.image.alt} 
+                        class="block w-full h-auto object-cover"
+                    />
+
+                    <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-4 md:py-8 px-6 transition-colors duration-200 group-hover:bg-pink-800/90">
+                        <h2 class="text-white text-lg md:text-2xl tracking-widest uppercase text-center font-light">
+                            {clinicData.image.title}
+                        </h2>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+    </div>
     <Footer />
 </Layout>
