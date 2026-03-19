@@ -1,10 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-<<<<<<< HEAD
-import Banner from "../../components/Banner.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/footer.astro";
-import PrincipalImagen from "../../components/PrincipalImage.astro";
 const titulo= "VISÍTENOS";
 const texto = `La <strong class='font-bold text-[#444]'>Clínica Hermosilla 57</strong> se encuentra situada en el céntrico <strong class='font-bold text-[#444]'>barrio de Salamanca de Madrid</strong>. Disponemos de plazas concertadas en Parking El Pilar (C/Ayala, 64) a unos 2 minutos de la Clínica e instalaciones adaptadas para personas con movilidad reducida.
 
@@ -24,9 +19,6 @@ recepcion@clinicahermosilla57.com`;
 ---
 
 <Layout>
-	<Banner/>
-	<Header />
-	<PrincipalImagen/>
 	<div class="px-[10%] py-10 overflow-hidden">
 		<h2 class="text-center font-bold text-3xl  text-pink-400 mb-10">{titulo}</h2>
 		<p set:html={texto} class="whitespace-pre-line font-light text-xl max-[600px]:text-sm mb-10"></p>
@@ -36,12 +28,4 @@ recepcion@clinicahermosilla57.com`;
 			</iframe>
 		</div>
 	</div>
-	<Footer />
-=======
-
----
-
-<Layout>
-	
->>>>>>> main
 </Layout>

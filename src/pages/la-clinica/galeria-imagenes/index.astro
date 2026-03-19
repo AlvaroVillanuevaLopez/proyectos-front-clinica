@@ -1,10 +1,6 @@
 ---
 import "/src/styles/global.css";
 import Layout from '../../../layouts/Layout.astro';
-import Footer from "../../../components/footer.astro";
-import Header from "../../../components/Header.astro";
-import Banner from "../../../components/Banner.astro";
-import PrincipalImagen from "../../../components/PrincipalImage.astro";
 import img1 from "../../../assets/galeria-fotos/img1.jpg";
 import img2 from "../../../assets/galeria-fotos/img2.jpg";
 import img3 from "../../../assets/galeria-fotos/img3.jpg";
@@ -16,9 +12,6 @@ import img8 from "../../../assets/galeria-fotos/img8.jpg";
 import img9 from "../../../assets/galeria-fotos/img9.jpg";
 ---
 <Layout>
-    <Banner/>
-    <Header/>
-    <PrincipalImagen/>  
     <div id="clinic-gallery" class="bg-white min-h-screen pt-6 md:pt-10 pb-20 px-[10%] py-10 overflow-hidden flex flex-wrap justify-center gap-5">
         <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)]">
             <img src={img1.src} class="object-cover hover:border-5 border-pink-800 hover:scale-90" alt="Imagen de la Clínica">
@@ -48,10 +41,7 @@ import img9 from "../../../assets/galeria-fotos/img9.jpg";
             <img src={img9.src} class="object-cover hover:border-5 border-pink-800 hover:scale-90" alt="Imagen de la Clínica">
         </div>
     </div>
-    <Footer />
-    <Footer />
     <div id="image-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300 pointer-events-none cursor-pointer">
-        <!-- El max-w-[90vw] ya controla que no se salga de la pantalla -->
         <div id="modal-content" class="relative max-w-[70vw] md:w-[90vw] md:h-[90vh] bg-white p-2 md:p-4 rounded-lg shadow-2xl scale-95 transition-transform duration-300 cursor-default flex flex-col items-center w-fit max-w-[95vw] max-h-[95vh]">
             <button id="close-modal" class="absolute top-2 right-2 text-gray-700 hover:text-black focus:outline-none z-50 p-2 bg-white/70 ">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
