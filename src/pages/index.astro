@@ -1,8 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/footer.astro";
+import Carrusel from "../components/IndexSlider.astro";
+import img1 from "../assets/apartados-index/img1.jpg";
+import img2 from "../assets/apartados-index/fachada-clinica.jpg";
+import img3 from "../assets/apartados-index/paciente.jpg";
+import img4 from "../assets/apartados-index/team.jpg";
 
+const links = [
+	{
+		title: "equipo profesional",
+		url: "/quienes-somos/",
+		src: img4.src,
+	},
+	{
+		title: "tratamientos de salud y estética bucodental",
+		url: "/especialidades-y-tratamientos/",
+		src: img3.src,
+	},
+	{
+		title: "conozca nuestra clinica",
+		url: "/la-clinica/",
+		src: img1.src,
+	},
+	{
+		title: "contacto",
+		url: "/contacto/",
+		src: img2.src,
+	},
+];
 ---
 
 <Layout>
-	
+	<Banner />
+	<Header />
+	<main>
+		<Carrusel />
+		<div
+			class="w-full h-auto mb-20 pb-8 flex flex-row justify-center pt-15 gap-8 px-[10%] flex-wrap"
+		>
+			{
+				links.map((link) => (
+<div
+    onclick={`window.location.href='${link.url}'`}
+    class="relative min-[750px]:basis-[calc(50%-16px)] hover:scale-105 transition group cursor-pointer"
+>
+						<img
+							src={link.src}
+							class="w-full h-[250px] max-[1000px]:h-[150px] max-h-[300px] object-cover object-top"
+						/>
+						<div class="absolute bottom-0 left-0 right-0 bg-black/50 h-[70px] max-[600px]:h-[50px] group-hover:bg-pink-800/90 transition duration-200 text-white p-6">
+							<p
+								class="text-xs text-center uppercase"
+								set:html={link.title}
+							/>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</main>
+	<Footer />
 </Layout>

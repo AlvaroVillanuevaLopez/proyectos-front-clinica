@@ -2,3 +2,10 @@
 .pestana{
     @apply ml-2 text-sm font-bold p-3 px-5;
 }
+html {
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+}
+footer{
+    background-color: var(--color-gray-800);
+}
