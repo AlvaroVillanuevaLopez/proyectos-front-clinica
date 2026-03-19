@@ -1,0 +1,37 @@
+---
+const rutas = [
+  "la-clinica",
+  "contacto",
+  "especialidades-y-tratamientos",
+  "quienes-somos",
+  "tratamientos"
+];
+
+const pathname = Astro.url.pathname;
+const segmentos = pathname.split("/").filter(Boolean);
+const ultimoSegmento = segmentos[segmentos.length - 1];
+
+const pagina=(rutas.includes(ultimoSegmento))?ultimoSegmento:null;
+
+let titulo = "";
+let backgroundImage = "";
+
+if (pagina) {
+  titulo = pagina
+    .replaceAll("-", " ")
+    .replace(/\b\w/g, l => l.toUpperCase());
+
+  backgroundImage = `/images-background/${pagina}.jpg`;
+}
+---
+
+{pagina && (
+  <div
+    class="w-full py-20 bg-cover bg-center"
+    style={`background-image: url(${backgroundImage});`}
+  >
+    <h1 class="text-center text-white text-5xl font-bold">
+      {titulo}
+    </h1>
+  </div>
+)}
