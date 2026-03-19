@@ -1,0 +1,105 @@
+---
+import img1 from "../assets/carrusel-index/img1.jpg";
+import img2 from "../assets/carrusel-index/img2.jpg";
+import img3 from "../assets/carrusel-index/img3.jpg";
+
+const imgs = [
+    {title:"Ofrecemos soluciones<br>duraderas" ,link: img1.src, data: "Su salud bucodental es nuestra prioridad." },
+    {title:"Atención personalizada y<br>exclusiva" ,link: img2.src, data: "Seguimiento exhaustivo de los tratamientos y odontología avanzada." },
+    {title:"Odontología de Calidad" ,link: img3.src, data: "" }
+]
+---
+
+<style>
+    /* Se han incluido en la etiqueta style los estilos que no se pueden aplicar con Tailwind */
+    /* Todos los slides empiezan invisibles y debajo */
+    /* La transición de 1s hace que el cambio de opacidad sea suave */
+
+    #slider li {
+        transition: opacity 1s;
+        opacity: 0;
+        z-index: 0;
+    }
+    /* El slide activo se vuelve visible y sube encima con z-index */
+    #slider li.active {
+        opacity: 1;
+        z-index: 1;
+    }
+    /* El dot activo se pone rosa intenso */
+    .dot.item-select-slid {
+    background-color: rgba(199, 61, 126, 0.85);
+        }
+</style>
+
+<!-- relative para que los hijos absolute se posicionen aquí dentro -->
+<!-- w-full para que ocupe todo el ancho -->
+<section id="container-slider" class="hidden md:block relative w-full overflow-hidden">
+    <!-- Cursor pointer para que aparezca una mano al pasar el raton por encima del elemento -->
+    <button data-dir="anterior" class="arrow absolute top-[45%] left-[50px] z-[2] text-[30pt] text-[rgba(204,204,204,0.65)] cursor-pointer">&#10094;</button>
+    <button data-dir="siguiente" class="arrow absolute top-[45%] right-[50px] z-[2] text-[30pt] text-[rgba(204,204,204,0.65)] cursor-pointer">&#10095;</button>
+
+    <ul class="absolute flex right-[2%] bottom-[5%] list-none z-[2] gap-[10px]">
+        {imgs.map((_, i) => (
+            <li>
+                <button
+                    data-index={i}
+                    class={`dot rounded-full cursor-pointer w-[10px] h-[10px] block bg-[#506A85D9] ${i === 0 ? 'item-select-slid' : ''}`}
+                ></button>
+            </li>
+        ))}
+    </ul>
+
+    <ul id="slider" class="relative w-full md:h-[40vh] lg:h-[60vh]">
+        {imgs.map((img, i) => (
+            <li
+                class={`bg-no-repeat bg-cover md:bg-center absolute top-0 left-0 w-full h-full ${i === 0 ? 'active' : ''}`}
+                style={`background-image: url("${img.link}")`}
+            >
+                <div class="flex items-end justify-end w-full h-full bg-[rgba(0,0,0,0.50)]">
+                    <div class="flex items-end justify-center flex-col text-center h-[30%] mb-15 mr-15 text-white bg-[#506A85D9] text-end px-10">
+                        <!-- Tracking aplica espacio entre letras -->
+                        <h2 class=" text-[20pt] tracking-[1px] mb-5 max-[460px]:text-[15pt] font-semibold" set:html={img.title} />
+                        <p class="text-[13pt]">{img.data}</p>
+                    </div>
+                </div>
+            </li>
+        ))}
+    </ul>
+</section>
+
+<script>
+    // Selecciona todos los slides y dots
+    const slides = document.querySelectorAll<HTMLElement>('#slider li');
+    const dots = document.querySelectorAll<HTMLElement>('.dot');
+
+    // Índice del slide actualmente visible
+    let current = 0;
+
+    function goTo(next: number) {
+        // Desactiva el slide y dot actuales
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('item-select-slid');
+
+        // Calcula el siguiente índice de forma circular
+        current = (next + slides.length) % slides.length;
+
+        // Activa el nuevo slide y dot
+        slides[current].classList.add('active');
+        dots[current].classList.add('item-select-slid');
+    }
+
+    // Click en flechas: anterior resta 1, siguiente suma 1
+    document.querySelectorAll<HTMLElement>('.arrow').forEach(btn => {
+        btn.addEventListener('click', () => {
+            goTo(btn.dataset.dir === 'anterior' ? current - 1 : current + 1);
+        });
+    });
+
+    // Click en dot: va directo al slide de ese índice
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    });
+
+    // Auto-avance cada 10 segundos
+    setInterval(() => goTo(current + 1), 10000);
+</script>
