@@ -1,10 +1,6 @@
 ---
 import "/src/styles/global.css";
 import Layout from '../../layouts/Layout.astro';
-import Footer from "../../components/footer.astro";
-import Header from "../../components/Header.astro";
-import Banner from "../../components/Banner.astro";
-import PrincipalImagen from "../../components/PrincipalImage.astro";
 const text = `En la <b>Clínica Hermosilla 57</b> contamos con un excelente equipo de <b>odontólogos especializados</b> en diferentes áreas, que tratarán sus problemas bucodentales desde un <b>enfoque multidisciplinar</b>. Un conjunto de expertos que darán solución a todas sus necesidades.
 
 El trabajo en equipo es uno de los pilares fundamentales de nuestra <b>clínica dental especializada</b> en problemas de salud bucodental. En la <b>Clínica Hermosilla 57</b> sabemos que la suma de conocimientos, buen hacer y trabajo en equipo es la clave del éxito. Aunando esfuerzos logramos soluciones más eficientes y adecuadas tanto en odontología estética especializada como en tratamientos de salud bucodental para cada uno de nuestros pacientes.
@@ -38,9 +34,7 @@ const dentists = [
 ]
 ---
 <Layout>
-    <Banner/>
-    <Header/>
-    <PrincipalImagen/>
+
     <main>
       <div class="px-[10%] py-10 overflow-hidden">
         <img src="/src/assets/specialties-images/team.jpg" class="float-right w-[570px] h-[300px] object-cover ml-8 mb-4 rounded max-[600px]:w-[350px] max-[600px]:h-[200px]">
@@ -60,5 +54,4 @@ const dentists = [
         </div>
       </div>
     </main>
-<Footer />
 </Layout>

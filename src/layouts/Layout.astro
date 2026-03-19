@@ -1,6 +1,11 @@
 ---
-// Importa aquí el CSS para que todas las páginas lo tengan
-import '../styles/global.css'; 
+//estilos
+import '../styles/global.css';
+//componentes
+import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -15,7 +20,11 @@ import '../styles/global.css';
 		<title>Inicio - Clinica Hermosilla</title>
 	</head>
 	<body>
+		<Header/>
+		<Banner/>
+		<Hero/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 
