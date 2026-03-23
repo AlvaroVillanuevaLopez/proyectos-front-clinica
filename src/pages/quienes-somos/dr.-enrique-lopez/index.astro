@@ -1,0 +1,54 @@
+---
+import "/src/styles/global.css";
+import Layout from '../../../layouts/Layout.astro';
+import img1 from '../../../assets/specialties-images/EnriqueLopez.jpg';
+const name = "DR. ENRIQUE LÓPEZ"
+const description = `El Dr. Enrique López es Licenciado en Odontología por la Universidad Alfonso X el Sabio de Madrid y Máster en Estética Avanzada por la Universidad Politécnica de Cataluña.
+
+Colegiado por el Colegio de Odontólogos y Estomatólogos, ejerce como odontólogo y especialista en Prótesis, Estética Dental Avanzada, Odontología Conservadora  y Cirugía Estética de la Encía.  Es el encargado de llevar a cabo uno de los tratamientos más avanzados en odontología estética: <b>El diseño personalizado de la sonrisa asistido por ordenador</b>, con el que se puede mostrar al paciente cuáles serán los resultados finales en su boca antes de comenzar el tratamiento. El Dr. López está Acreditado para la realización de carillas <b>Lumineers</b> y  <b>Glam Smile</b>.
+
+Ha compatibilizado su labor clínica con la docencia en el Máster de Cirugía Oral de la Universidad de Alcalá de Henares como profesor de prótesis y estética sobre implantes.
+
+El Dr. López atiende consulta en castellano e inglés.`;
+const dentists = [
+        {
+      name:'DRA.&nbsp;BERTA CARLEVARIS',
+      src:'/src/assets/specialties-images/BertaCarlevaris.jpg',
+      link:'../dra.-berta-carlevaris/'
+    },
+    {
+      name:'DR.&nbsp;JAVIER MARTÍNEZ-SALMEÁN',
+      src:'/src/assets/specialties-images/JavierMartinezSalmean.jpg',
+      link:'../dr.-javier-martinez-salmean/'
+    },
+    {
+      name:'DR.&nbsp;PABLO FRAILE',
+      src:'/src/assets/specialties-images/PabloFrailes.jpg',
+      link:'../dr.-pablo-fraile/'
+    }
+]
+---
+
+<Layout>
+  <div class="px-[16%] max-[1000px]:flex-wrap max-[1000px]:flex-col py-20 overflow-hidden flex flex-row w-full">
+    <div class="min-[1000px]:basis-6/8 flex flex-col items-start min-[1000px]:pr-20 ">
+      <img src={img1.src} class="w-full max-h-[400px] object-contain"/>
+      <h2 class="font-bold text-xl uppercase text-gray-600 mt-5 mb-10">{name}</h2>
+        <span set:html={description} class="whitespace-pre-line font-light text-lg max-[600px]:text-sm"></span>
+    </div>
+
+    <div class="min-[1000px]:basis-2/8">
+    <h2 class="w-full text-3xl border-b-3 text-pink-500 border-pink-500 font-lightbold pt-3 mb-5 max-[1050px]:text-sm">OTROS PROFESIONALES</h2>
+        <div class="flex flex-col justify-center gap-8 px-[10%]">
+          {dentists.map(dentist => (
+            <div onclick={`window.location.href='${dentist.link}'`} class="cursor-pointer relative w-full hover:scale-105 transition group max-w-[350px]">
+<img src={dentist.src} class="w-full h-[250px] max-[1500px]:h-[150px] max-h-[300px] object-cover object-top"/>
+<div class="absolute bottom-0 left-0 right-0 bg-black/50 h-[70px] max-[600px]:h-[50px] group-hover:bg-pink-800/90 transition duration-200 text-white p-6">
+                <p class="text-[8px] min-[1000px]:text-xs text-center" set:html={dentist.name}/>
+              </div>
+            </div>
+          ))}
+        </div>    
+      </div>
+  </div>
+</Layout>
