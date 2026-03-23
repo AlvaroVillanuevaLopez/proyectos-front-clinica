@@ -1,0 +1,55 @@
+---
+import imagenDefault from '../assets/images-background/eje.avif';
+import el from '../assets/images-background/descarga.jpg';
+const currentPath = Astro.url.pathname;
+const contenido={
+    imagen:"",
+    titulo:""
+}
+switch (true){
+    case currentPath == "/quienes-somos/":
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="QUIENES SOMOS";
+        break;
+    case currentPath.startsWith("/quienes-somos/dra-berta-carlevaris/"):
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="DRA. BERTA CARLEVARIS";
+        break;
+    case currentPath.startsWith("/quienes-somos/dr-enrique-lopez/"):
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="DR. ENRIQUE LÓPEZ";
+        break;
+    case currentPath.startsWith("/quienes-somos/dr-pablo-fraile/"):
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="DR. PABLO FRAILE";
+        break;
+    case currentPath.startsWith("/quienes-somos/dr-javier-martinez-salmean/"):
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="DR. JAVIER MARTÍNE-SALEMÁN";
+        break;
+    case currentPath=="/la-clinica/":
+        contenido.imagen=el.src;
+        contenido.titulo="LA CLÍNICA";
+        break;
+    case currentPath=="/la-clinica/galeria-imagenes/":
+        contenido.imagen=imagenDefault.src;
+        contenido.titulo="GALERÍA DE IMÁGENES";
+        break;
+    case currentPath.startsWith("/especialidades-y-tratamientos/"):
+        contenido.imagen=el.src;
+        contenido.titulo="LA CLÍNICA";
+        break;
+    case currentPath=="/contacto/":
+        contenido.imagen=el.src;
+        contenido.titulo="CONTACTO";
+        break;
+}
+---
+<div 
+  class="w-full py-20 bg-cover bg-center" 
+  style={`background-image: url('${contenido.imagen}');`}
+>
+  <h1 class="text-center text-white text-7xl font-bold">
+    {contenido.titulo}
+  </h1>
+</div>
