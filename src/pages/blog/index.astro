@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const posts = [
+    {
+        titulo: 'Odontología en adultos',
+        parrafo: 'Conforme nos hacemos mayores, la salud bucodental y cuidar adecuadamente nuestros dientes cobrará aún más protagonismo en nuestras prioridades. Todo cambia a medida que envejecemos, incluida nuestra boca.',
+        src:'/src/assets/blog-fotos/post1.jpg',
+        link:''
+    },
+    {
+        titulo: 'EL CONTORNEADO DENTAL, ¿QUÉ ES Y PARA QUÉ SIRVE?',
+        parrafo: 'Las pequeñas roturas en los bordes de los dientes, así como ligeros apiñamientos, pueden suponer un problema de imagen para muchas personas, impidiéndoles sonreír de forma espontánea.',
+        src:'/src/assets/blog-fotos/post2.jpg',
+        link:''
+    },
+    {
+        titulo: '¿Dientes amarillos? Cómo lucir una sonrisa más blanca.',
+        parrafo: 'Vivimos en una sociedad en la que nuestra imagen es un valor añadido que, en ocasiones, puede suponer un factor decisivo en el rumbo que tome nuestra vida. Una sonrisa cuidada es nuestra mejor carta de presentación.',
+        src:'/src/assets/blog-fotos/post3.jpg',
+        link:''
+    },
+    {
+        titulo: "Cirugía 'de implantes' guiada por ordenador",
+        parrafo: 'Os dejamos la entrevista realizada a Enrique López Montero y Berta Carlevaris, especialistas en odontología y los responsables de Clínica Hermosilla 57 sobre las últimas tecnologías en implantes.',
+        src:'/src/assets/blog-fotos/post4.png',
+        link:''
+    },
+    {
+        titulo: 'Bruxismo, ¿Qué es y cómo podemos tratarlo?',
+        parrafo: '¿Sueles apretar y rechinar los dientes cuando duermes o durante el día? El bruxismo puede evolucionar hacia consecuencias más graves para nuestra salud si no se acude a un odontólogo a tiempo.',
+        src:'/src/assets/blog-fotos/post5.jpg',
+        link:''
+    },
+    {
+        titulo: 'Cómo detectar a tiempo un cáncer oral',
+        parrafo: 'En la boca, además de caries o inflamación de encías, pueden surgir enfermedades más graves como el cáncer oral. Los dentistas son clave para detectarlo precozmente mediante una simple exploración.',
+        src:'/src/assets/blog-fotos/post6.jpg',
+        link:''
+    },
+    {
+        titulo: '¿Qué pasa si dejamos de lavarnos los dientes?',
+        parrafo: 'La base de la odontología es la higiene bucal y muchas veces, gracias a ella, evitaremos realizar visitas innecesarias a nuestra clínica dental. La prevención es de suma importancia.',
+        src:'/src/assets/blog-fotos/post7.jpg',
+        link:''
+    }
+];
+---
+
+<Layout>
+	<div class="px-[10%] py-10 overflow-hidden">
+        {posts.map((post) => (
+            <div class="flex flex-col md:flex-row my-10 mx-4 md:mx-10 md:my-15 gap-10 md:gap-8 items-start md:items-center">
+                <div class="flex-1 mb-6 md:mb-0">
+                    <a href=""><h2 class="text-5xl text-[#2c7bb6] font-normal hover:underline cursor-pointer mb-5">{post.titulo}</h2></a>
+                    <p class="whitespace-pre-line font-light text-2xl text-justify max-[600px]:text-sm mb-10">{post.parrafo}</p>
+                </div>
+                <img src={post.src} alt="Imagen De La Publicación" class="w-full max-w-[400px] h-auto aspect-[4/3] md:w-[350px] md:h-[225px] object-cover flex-shrink-0 mx-auto md:mx-0">
+            </div>
+        ))}
+	</div>
+</Layout>
+
