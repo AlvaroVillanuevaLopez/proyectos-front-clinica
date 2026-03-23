@@ -14,29 +14,27 @@ const dentists = [
     {
       name:'DRA.&nbsp;BERTA CARLEVARIS',
       src:'/src/assets/specialties-images/BertaCarlevaris.jpg',
-      link:'dra-berta-carlevaris/'
+      link:'./dra.-berta-carlevaris/'
     },
     {
       name:'DR.&nbsp;ENRIQUE LÓPEZ',
       src:'/src/assets/specialties-images/EnriqueLopez.jpg',
-      link:'dr-enrique-lopez/'
+      link:'./dr.-enrique-lopez/'
     },
     {
       name:'DR.&nbsp;PABLO FRAILE',
       src:'/src/assets/specialties-images/PabloFrailes.jpg',
-      link:'dr-pablo-fraile/'
+      link:'./dr.-pablo-fraile/'
     },
     {
       name:'DR.&nbsp;JAVIER MARTÍNEZ-SALMEÁN',
       src:'/src/assets/specialties-images/JavierMartinezSalmean.jpg',
-      link:'dr-javier-martinez-salmean/'
+      link:'./dr.-javier-martinez-salmean/'
     }
 ]
 ---
 <Layout>
-
-    <main>
-      <div class="px-[10%] py-10 overflow-hidden">
+      <div class="px-[10%] py-10 overflow-hidden ">
         <img src="/src/assets/specialties-images/team.jpg" class="float-right w-[570px] h-[300px] object-cover ml-8 mb-4 rounded max-[600px]:w-[350px] max-[600px]:h-[200px]">
         <span set:html={text} class="whitespace-pre-line font-light text-2xl max-[600px]:text-sm"></span>
       </div>
@@ -44,7 +42,7 @@ const dentists = [
           <h2 class="text-3xl font-bold text-gray-600 text-center pt-[2%] max-[600px]:text-xl max-[600px]:pt-[5%]">EL EQUIPO</h2>
         <div class="flex flex-row justify-center pt-15 gap-8 px-[10%] max-[600px]:flex max-[600px]:flex-wrap">
           {dentists.map(dentist => (
-            <div class="relative w-full hover:scale-105 transition group max-w-[350px]">
+            <div onclick={`window.location.href='${dentist.link}'`} class="cursor-pointer relative w-full hover:scale-105 transition group max-w-[350px]">
 <img src={dentist.src} class="w-full h-[250px] max-[1000px]:h-[150px] max-h-[300px] object-cover object-top"/>
 <div class="absolute bottom-0 left-0 right-0 bg-black/50 h-[70px] max-[600px]:h-[50px] group-hover:bg-pink-800/90 transition duration-200 text-white p-6">
                 <p class="text-xs text-center" set:html={dentist.name}/>
