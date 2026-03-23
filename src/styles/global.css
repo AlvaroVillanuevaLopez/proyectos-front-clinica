@@ -1,7 +1,8 @@
 @import "tailwindcss";
 .pestana{
-    @apply ml-2 text-sm font-bold p-3 px-5;
+    @apply font-semibold text-sm py-3 px-5;
 }
+
 html {
     overflow-x: hidden;
     scrollbar-gutter: stable;

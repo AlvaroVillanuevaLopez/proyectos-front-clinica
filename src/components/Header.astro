@@ -3,17 +3,17 @@ import type { startsWith } from "astro:schema";
 
 const currentPath = Astro.url.pathname;
 const active = "bg-pink-600 text-white";
-const inactive = "hover:text-gray-500";
+const inactive = "text-pink-600 hover:text-gray-500";
 ---
-<div id="header" class="bg-white max-w-6xl mx-auto md:grid md:grid-cols-12 py-4 mt-20 md:mt-10">
+<div id="header" class="bg-white max-w-6xl mx-auto md:grid md:grid-cols-12 pt-4 pb-1   mt-20 md:mt-10">
 
   <!-- Logo -->
-  <div id="logo" class=" max-w-6xl mx-auto md:col-span-4 mt-5 mb-7">
+  <div id="logo" class="md:col-span-4 mt-5 mb-7">
     <a href="/"><img src="/logo/logo.png" alt="logo" /></a>
   </div>
 
   <!-- Menú con Alpine.js -->
-  <div class="md:col-span-12 lg:flex  lg:col-span-8" x-data="{ open: false }">
+  <div class="md:col-span-12 lg:flex lg:col-span-8 lg:justify-end" x-data="{ open: false }">
 
     <!-- Botón hamburguesa solo en móviles -->
     <div class="flex items-center md:hidden">
@@ -33,25 +33,25 @@ const inactive = "hover:text-gray-500";
     <!-- Menú de pestañas -->
     <div 
       :class="{'block': open, 'hidden': !open}" 
-      class="hidden flex-col md:flex md:flex-row lg:justify-end md:items-center mt-2 md:mt-0"
+      class="hidden flex-col md:flex md:flex-row lg:justify-end md:items-center mt-2"
     >
-      <div class={`pestana ${Astro.url.pathname === '/' ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
+      <div class={`pestana ${Astro.url.pathname === '/' ? active : inactive}`}>
         <a href="/">INICIO</a>
       </div>
 
-      <div class={`pestana ${Astro.url.pathname.startsWith('/quienes-somos/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
+      <div class={`pestana ${Astro.url.pathname.startsWith('/quienes-somos/') ? active : inactive}`}>
         <a href="/quienes-somos/">¿QUIENES SOMOS?</a>
       </div>
 
-      <div class={`pestana w-10/45 ${Astro.url.pathname.startsWith('/especialidades-y-tratamientos/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
+      <div class={`pestana w-10/45 ${Astro.url.pathname.startsWith('/especialidades-y-tratamientos/') ? active : inactive}`}>
         <a href="/especialidades-y-tratamientos/">ESPECIALIDADES Y TRATAMIENTOS</a>
       </div>
 
-      <div class={`pestana ${Astro.url.pathname.startsWith('/la-clinica/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
+      <div class={`pestana ${Astro.url.pathname.startsWith('/la-clinica/') ? active : inactive}`}>
         <a href="/la-clinica/">LA CLINICA</a>
       </div>
 
-      <div class={`pestana ${Astro.url.pathname.startsWith('/contacto/') ? 'bg-pink-600 text-white' : 'hover:text-gray-500'}`}>
+      <div class={`pestana ${Astro.url.pathname.startsWith('/contacto/') ? active : inactive}`}>
         <a href="/contacto/">CONTACTO</a>
       </div>
     </div>
