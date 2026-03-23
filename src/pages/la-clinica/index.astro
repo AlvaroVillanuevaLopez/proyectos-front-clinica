@@ -23,36 +23,49 @@ Además, la <strong class='font-bold text-[#444]'>Clínica Hermosilla 57</strong
 Si busca una <strong class='font-bold text-[#444]'>clínica dental en el barrio de Salamanca</strong> en Madrid, venga a conocer nuestras instalaciones, nuestro compromiso con la calidad de los resultados y la discreción con la que tratamos a nuestros pacientes.`;
 ---
 <Layout>
+<<<<<<< HEAD
     <div class="px-[16%] py-10 overflow-hidden bg-white pt-6 md:pt-10 pb-20">
     <section class="font-light text-[#777] leading-relaxed">
+=======
+    <div class="bg-white pt-6 md:pt-10a px-[10%] py-10 pb-20 overflow-hidden ">
+        <section class=" md:px-10 font-light">
+>>>>>>> main
 
-        <div class="text-lg md:text-2xl md:text-left flex flex-col gap-6">
-            <p set:html={parrafos} class="whitespace-pre-line"></p>
-        </div>
-
-        <div class="flex gap-4 mt-8">
-            <a target="_blank" href="http://x.com/?lang=es">
-                <img src={logoX.src} alt="Logo X" class="w-8 h-8 md:w-10 md:h-10">
-            </a>
-            <a target="_blank" href="https://mail.google.com/">
-                <img src={logoGmail.src} alt="Logo Gmail" class="w-8 h-8 md:w-10 md:h-10">
-            </a>
-        </div>
-
-        <div class="relative max-w-3xl mx-auto mt-10 overflow-hidden transition duration-200 ease-in-out group hover:scale-105 rounded-lg">
-            <img 
-                src={fotoGaleria.src} 
-                alt={clinicData.image.alt} 
-                class="block w-full h-auto object-cover"
-            />
-
-            <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-4 md:py-8 px-6 transition-colors duration-200 group-hover:bg-pink-800/90">
-                <h2 class="text-white text-lg md:text-2xl tracking-widest uppercase text-center font-light">
-                    {clinicData.image.title}
-                </h2>
+            <div class="text-lg md:text-xl text-justify md:text-left flex flex-col gap-6">
+                <p set:html={parrafos} class="whitespace-pre-line"></p>
             </div>
-        </div>
 
+<<<<<<< HEAD
     </section>
 </div>
+=======
+            <div class="flex items-center gap-4 mt-8">
+                <a target="_blank" href="http://x.com/?lang=es">
+                    <img src={logoX.src} alt="Logo X" class="w-8 h-8 md:w-10 md:h-10">
+                </a>
+                <a target="_blank" href="https://mail.google.com/">
+                    <img src={logoGmail.src} alt="Logo Gmail" class="w-8 h-8 md:w-10 md:h-10">
+                </a>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto mt-10 overflow-hidden transition duration-200 ease-in-out group hover:scale-105">
+                <a href="/la-clinica/galeria-imagenes/">
+                    <img 
+                        src={fotoGaleria.src} 
+                        alt={clinicData.image.alt} 
+                        class="block w-full h-auto object-cover"
+                    />
+
+                    <div class="absolute bottom-0 left-0 w-full bg-[#485f75]/80 py-4 md:py-8 px-6 transition-colors duration-200 group-hover:bg-pink-800/90">
+                        <h2 class="text-white text-lg md:text-2xl tracking-widest uppercase text-center font-light">
+                            {clinicData.image.title}
+                        </h2>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+    </div>
+    <!-- <Footer /> -->
+>>>>>>> main
 </Layout>

@@ -5,10 +5,15 @@ const rutas = [
   "especialidades-y-tratamientos",
   "quienes-somos",
   "tratamientos",
+<<<<<<< HEAD
   "dr.-enrique-lopez",
   "dr.-javier-martinez-salmean",
   "dr.-pablo-fraile",
   "dra.-berta-carlevaris"
+=======
+  "blog",
+  "galeria-imagenes"
+>>>>>>> main
 ];
 
 const pathname = Astro.url.pathname;
@@ -35,7 +40,7 @@ if (pagina) {
     style={`background-image: url(${backgroundImage});`}
   >
     <h1 class="text-center text-white text-5xl font-bold">
-      {titulo}
+      {titulo.toUpperCase()}
     </h1>
   </div>
 )}

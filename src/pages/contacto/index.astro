@@ -1,8 +1,31 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+const titulo= "VISÍTENOS";
+const texto = `La <strong class='font-bold text-[#444]'>Clínica Hermosilla 57</strong> se encuentra situada en el céntrico <strong class='font-bold text-[#444]'>barrio de Salamanca de Madrid</strong>. Disponemos de plazas concertadas en Parking El Pilar (C/Ayala, 64) a unos 2 minutos de la Clínica e instalaciones adaptadas para personas con movilidad reducida.
 
+No dude en ponerse en contacto con nosotros para pedir cita o para cualquier aclaración.
+
+Solo atendemos consulta <strong class='font-bold text-[#444]'>con cita previa, excepto urgencias.</strong>
+
+<strong class='font-bold text-[#444]'>Dirección:</strong>
+Calle Hermosilla, 57 – Bajo Izquierda.
+28001 – Madrid
+
+<strong class='font-bold text-[#444]'>Teléfonos:</strong>
+(+34) 91 310 51 52 – Móvil: (+34) 680 40 42 51 – Fax: (+34) 91 319 41 05
+
+<strong class='font-bold text-[#444]'>Email:</strong>
+recepcion@clinicahermosilla57.com`;
 ---
 
 <Layout>
-	
+	<div class="px-[10%] py-10 overflow-hidden">
+		<h2 class="text-center font-bold text-3xl  text-pink-400 mb-10">{titulo}</h2>
+		<p set:html={texto} class="whitespace-pre-line font-light text-xl max-[600px]:text-sm mb-10"></p>
+		<div class="mx-auto my-[20px] w-full max-w-[1500px] h-[650px] overflow-hidden">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.211741894445!2d-3.6834802883969644!3d40.42631005493712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228bd09cef16f%3A0x9a9fb0814d6a8242!2sCl%C3%ADnica%20Hermosilla%2057!5e0!3m2!1ses!2ses!4v1773909542285!5m2!1ses!2ses" 
+				class="w-full h-full border-0">
+			</iframe>
+		</div>
+	</div>
 </Layout>
