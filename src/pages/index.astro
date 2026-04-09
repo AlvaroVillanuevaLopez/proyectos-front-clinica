@@ -38,10 +38,10 @@ const links = [
 		>
 			{
 				links.map((link) => (
-<div
-    onclick={`window.location.href='${link.url}'`}
-    class="relative min-[750px]:basis-[calc(50%-16px)] hover:scale-105 transition group cursor-pointer"
->
+					<div
+						onclick={`window.location.href='${link.url}'`}
+						class="relative min-[750px]:basis-[calc(50%-16px)] hover:scale-105 transition group cursor-pointer"
+					>
 						<img
 							src={link.src}
 							class="w-full h-[250px] max-[1000px]:h-[150px] max-h-[300px] object-cover object-top"

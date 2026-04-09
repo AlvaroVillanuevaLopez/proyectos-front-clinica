@@ -46,14 +46,14 @@ const rightlinks =[
 ---
 
 <footer class="bg-gray-800 text-pink-400 text-xs font-semibold flex flex-wrap flex-row justify-center py-[5%] px-[5%] gap-4 w-full relative z-10">
-<ul class="flex max-[600px]:flex-wrap gap-2 max-[900px]:pt-5 max-[600px]:flex-col min-[1050px]:pr-10 max-[600px]:w-full">
-    {leftlinks.map(link=>(
-    <li class="max-[600px]:py-2"><a href={link.link}>{link.name}</a><span class="px-4 max-[600px]:px-1 font-black">&bull;</span></li>
-))}
-</ul>
-<ul class="flex max-[600px]:flex-wrap gap-2 max-[900px]:pt-5 max-[600px]:flex-col max-[600px]:w-full">
-    {rightlinks.map(link=>(
-    <li class="max-[600px]:py-2"><a href={link.link}>{link.name}</a><span class="px-2 max-[600px]:px-1 font-black">&bull;</span></li>
-))}
-</ul>
+    <ul class="flex max-[600px]:flex-wrap gap-2 max-[900px]:pt-5 max-[600px]:flex-col min-[1050px]:pr-10 max-[600px]:w-full">
+        {leftlinks.map(link=>(
+            <li class="max-[600px]:py-2"><a href={link.link}>{link.name}</a><span class="px-4 max-[600px]:px-1 font-black">&bull;</span></li>
+        ))}
+    </ul>
+    <ul class="flex max-[600px]:flex-wrap gap-2 max-[900px]:pt-5 max-[600px]:flex-col max-[600px]:w-full">
+        {rightlinks.map(link=>(
+            <li class="max-[600px]:py-2"><a href={link.link}>{link.name}</a><span class="px-2 max-[600px]:px-1 font-black">&bull;</span></li>
+        ))}
+    </ul>
 </footer>
